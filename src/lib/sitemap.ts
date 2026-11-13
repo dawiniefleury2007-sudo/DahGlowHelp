@@ -1,0 +1,4 @@
+import type { HelpData } from '@/types/help';
+const escape=(value:string)=>value.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+export function generateSitemap(data:HelpData){const paths=['','/categories','/contact','/orders','/legal/privacy-policy','/legal/terms-of-service',...data.categories.filter(c=>c.published).map(c=>`/categories/${c.id}`),...data.articles.filter(a=>a.published).map(a=>`/articles/${a.id}`)];return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${['en','es','fr'].flatMap(lang=>paths.map(path=>`\n<url><loc>${escape(`https://help.dahglow.com/${lang}${path}`)}</loc></url>`)).join('')}\n</urlset>`;}
+export function downloadText(filename:string,text:string,type='text/plain'){const url=URL.createObjectURL(new Blob([text],{type}));const a=document.createElement('a');a.href=url;a.download=filename;a.click();URL.revokeObjectURL(url);}

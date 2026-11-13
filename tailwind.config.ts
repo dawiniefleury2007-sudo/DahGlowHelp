@@ -1,0 +1,2 @@
+import type { Config } from 'tailwindcss';
+export default { content: ['./index.html', './src/**/*.{ts,tsx}'], theme: { extend: { colors: { background:'hsl(var(--background))', foreground:'hsl(var(--foreground))', primary:'hsl(var(--primary))', subtle:'hsl(var(--subtle))', border:'hsl(var(--border))', rose:'hsl(var(--rose))', sage:'hsl(var(--sage))', lavender:'hsl(var(--lavender))', surface:'hsl(var(--surface))' }, fontFamily: { sans:['Inter','sans-serif'], display:['DM Sans','sans-serif'] } } }, plugins: [] } satisfies Config;

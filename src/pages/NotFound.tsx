@@ -1,0 +1,3 @@
+import {Link} from 'react-router-dom';
+import {ArrowLeft,Sparkles} from 'lucide-react';
+export default function NotFound(){return <div className="app-bg flex min-h-[70vh] items-center justify-center p-8"><section className="glass max-w-lg p-12 text-center"><Sparkles size={30} className="mx-auto mb-5 text-primary"/><p className="eyebrow mb-3">404 · A little detour</p><h1 className="text-3xl font-semibold">This page isn’t here.</h1><p className="mt-4 text-subtle">Let’s get you back to a helpful answer.</p><Link to="/en" className="btn-primary mt-6"><ArrowLeft size={16}/>Back to the Help Center</Link></section></div>;}

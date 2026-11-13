@@ -1,0 +1,2 @@
+interface Props {text:string;query:string;}
+export default function Highlight({text,query}:Props){const term=query.trim().split(/\s+/).find(x=>x.length>2)||'';if(!term)return <>{text}</>;const index=text.toLowerCase().indexOf(term.toLowerCase());if(index<0)return <>{text}</>;return <>{text.slice(0,index)}<mark className="rounded bg-rose px-0.5 text-primary">{text.slice(index,index+term.length)}</mark>{text.slice(index+term.length)}</>;}

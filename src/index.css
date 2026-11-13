@@ -12,3 +12,27 @@ html {
   zoom: 0.9;
 }
 
+/* Elegant sidebar scrollbar */
+.sidebar-nav-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--border)) transparent;
+  scrollbar-gutter: stable;
+}
+
+.sidebar-nav-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+
+.sidebar-nav-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.sidebar-nav-scroll::-webkit-scrollbar-thumb {
+  background: hsl(var(--border));
+  border-radius: 20px;
+}
+
+.sidebar-nav-scroll::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.45);
+}
+
